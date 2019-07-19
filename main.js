@@ -226,14 +226,13 @@ function loop10() {
     let pattern = '';
 
     for (let i = 1; i <= 5; i++) {
-        for (let j = i; j <= 5*i; j += i) {
+        for (let j = i; j <= 5 * i; j += i) {
             pattern += String(j) + ' ';
-            
+
         }
         pattern += '<br>';
     }
     console.log(pattern);
-
     answer.innerHTML = pattern;
 
 }
@@ -241,5 +240,19 @@ function loop10() {
 function loop11() {
     // You may ONLY update the pattern a single character(and a space) at a time
     // Hint: Use a nested for loop
+    let pattern = '';
 
+    for (let i = 10; i >= 1; i--) {
+        for (let j = 1; j <= i; j++) {
+
+            if (i % 2 == 0) { // EVEN, counting backwards => so row1 == 10
+                pattern += '- ';
+
+            } else { // ODD, counting backwards => so row2 == 9
+                pattern += '| ';
+            }
+        }
+        pattern += '<br>';
+    }
+    answer.innerHTML = pattern;
 }
